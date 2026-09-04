@@ -18,6 +18,7 @@ jobs:
         - name: Run tests
           run: npm test
   deploy:
+    needs: test #Without it both jobs would run in parallel, having a list is also possible
     runs-on: ubuntu-latest #Different jobs can have different runners
     steps:
        # Download Code    
