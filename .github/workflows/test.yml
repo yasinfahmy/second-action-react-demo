@@ -1,0 +1,19 @@
+name: 
+  Test Project
+on:
+  push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+        # Download Code    
+        - name: Get code
+          uses: actions/checkout@v3
+        - name: Install NodeJS
+          uses: actions/setup-node@v3 #actually already preinstalled on ubuntu
+          with:
+            node-version: 18
+        - name: Install dependencies
+          run: npm ci #or: install #npm = Node Package Manager: Tool used to install dependencies (third-party packages) for NodeJS project
+        - name: Run tests
+          run: npm test
