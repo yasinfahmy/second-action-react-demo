@@ -1,7 +1,7 @@
 name: 
   Deploy Project
 on:
-  push
+  [push, workflow_dispatch] #Can be a single event also
 jobs:
   test:
     runs-on: ubuntu-latest
